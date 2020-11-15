@@ -1,0 +1,23 @@
+distr_namernd(par, m, n) = generates m x n matrix of random numbers that follow the distribution distr_name
+ex: exprnd, trand
+
+U(0,1)=>rand
+N(0,1)=>randn
+
+2a)
+bern(p), pe(0,1), x(   0  1)
+                   (  1-p p)
+
+possible steps to solve 2a)
++ask for p
++ask for N(number of simulations)
++generate a vector of observations that is U(filled with N random numbers from U(0,1))
++define the random variable X just as we did
+-list the values in X only once using unique command
+-how many times each value appears in X using command list
+-transform the relative frequencies into probabilities(number of times of app divided by number of simulations
+
+possible step to solve 2b)
+-ask for number of trials
+-ask for probability
+-ask for number of simulations

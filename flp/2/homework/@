@@ -1,0 +1,7 @@
+subs([], X, Y, N).
+subs([X], X, Y, N):- subs([], X, Y, Y).
+go:-
+    X=[],
+    N=[],
+subs(X, 3, [5,5,5,5,5], N),
+print(N).
