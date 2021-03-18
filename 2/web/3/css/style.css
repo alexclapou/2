@@ -1,0 +1,376 @@
+.uppernavigation{
+	width: 60vw;
+	height: 3vw;
+}
+
+.textdefault{
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.logo{
+	margin-left: 10vw;
+	float: left;
+	width: 25vw;
+}
+
+.datenavigation{
+	float: left;
+	width: 10%;
+	font-size: 0.7em;
+	font-weight: bold;
+}
+
+button svg{
+  vertical-align: middle;
+}
+
+.topbar{
+	padding-top: 0.3vw;
+}
+.buttons{
+	background: white;
+	border-style: none;
+	text-align: center;
+    width: 25px;
+      cursor: pointer;
+
+    height: 30px;
+ }
+
+ .butt{
+ 	float: right;
+ }
+
+.topleftbar{
+	display: inline-block;
+	width: 5%;
+}
+
+.topnavbuttons{
+	height: 15px;
+	width: 16px;
+}
+
+.navbar{
+	display: inline-block;
+	width: 5%;
+	float: left;
+}
+
+ul{
+	list-style: none;
+}
+
+.languagelist{
+	margin: 0;
+
+}
+
+.languagelist, li{
+	float: left;
+	font-size: 0.8em;
+	padding: 0.3vw;	
+}
+
+.logindiv{
+	float: right;
+}
+
+.loginbuttons{
+	font-weight: bold;
+  	background-color: #567b95;
+  	border: none;
+  	color: white;
+  	padding: 0.5vw;
+  	text-align: center;
+  	font-size: 0.7em;
+  	cursor: pointer;
+  	margin: 0.2vw;
+  	border-radius: 5%;
+}
+
+ul li a:focus {
+	font-weight: bold;
+	outline: none;
+}
+
+a{
+	  outline: 0;
+	  text-decoration:none;
+	  color:black;
+}
+
+.bl{
+	margin-left: 20vw;
+	width: 20vw;
+}
+
+body{
+	height: 100%;
+	width: 60%;
+	margin: 0 auto;
+}
+
+#weatherspan{
+	font-weight: bold;
+}
+
+#weatheridk{
+	font-size: 0.7em;
+}
+
+.wthr{
+	margin:0.3vw;
+}
+
+#weathershape{
+	float: right;
+	color: green;
+	font-size: 1em;
+}
+
+.weatherdiv{
+	float: right;
+}
+
+.weatherdiv div{
+	font-size: 0.7em;
+}
+
+#navigationsubjects{
+	margin-top: 0.8vw;
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #000;
+	height: 1.7vw;
+	width: 60vw;
+}
+
+#navigationsubjects ul li{
+	margin-top: -0.8vw;
+	padding-inline-start: 0.85vw;
+}
+
+#content{
+	width: 60vw;
+	height: 40vw;
+}
+
+#daily{
+	border-bottom: double;
+	width: 60vw;
+	height: 3.5vw;
+	display: inline-block;
+
+}
+
+
+.dailythings{
+	float: left;
+	margin-right: 3vw;
+	width: 15vw;
+	height: 3.5vw;
+}
+
+#dailymiddle{
+	padding-left: 1vw;
+	border-left: 1px solid #ebebeb;
+}
+#dailyright{
+	padding-left: 1vw;
+	border-left: 1px solid #ebebeb;
+
+}
+
+.dailyphoto{
+	width: 45px;
+    height: 45px;
+}
+
+figure {
+  display: flex;
+  align-items: center;
+}
+
+#maincaption{
+	font-weight: bold;
+	margin-left: 0.6vw;
+	font-size: 0.85em;
+}
+
+#seccaption{
+	width: 20vw;
+	font-size: 0.85em;
+	margin-left: 0.6vw;
+}
+
+
+.figuredaily{
+	margin-left: 0;
+	margin-top: 0.5vw;
+}
+
+#threenewsdiv{
+	display: inline-block;
+
+	height: 20vw;
+	width: 60vw;
+}
+
+.newsdiv{
+	height: 20vw;
+	width: 17vw;
+}
+
+#leftnews{
+	float: left;
+}
+
+#livep{
+	color: red;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+#middlenews{
+	font-size: 0.8em;
+	width: 23vw;
+	padding: 1vw;
+	float: left;
+}
+
+#rightnews{
+	border-left: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+	padding-left: 0.5vw;
+	float: left;
+}
+
+
+.newsphoto{
+	width: 23vw;
+}
+
+
+.newslist{
+	margin-top: -0.9vw;
+	padding-left: 0px;
+	font-size: 1.1em;
+	color: #555;
+}
+ .newslist li::before{
+ 	color: #555;
+ 	content: "\2022";
+}
+
+#newstitle{
+	margin-top: -10px;
+	border-bottom: 1px solid #ebebeb;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+#liveinfo{
+	color: red;
+	font-size: 0.8em;
+}
+
+#bottomnews{
+	width: 60vw;
+	height: 15vw;
+}
+
+#bottomleftnews{
+	display: inline-block;
+	margin-top: -0.5vw;
+	border-top: 1px solid black;
+	width: 40vw;
+	height: 15vw;
+}
+
+#lnews{
+	float: left;
+	height: 5vw;
+	width: 13vw;
+	padding-right: 3vw;
+}
+
+.lastphoto{
+	padding-top: 1vw;
+	padding-left: 0.5vw;
+}
+
+#titlenews{
+	font-size: 1.8em;
+	font-weight: 1;
+	margin-top: -0.1vw;
+}
+#newstext{
+	color: #555;
+	margin-top: -0.7vw;
+	font-size: 0.9em;
+	border-bottom: 1px solid #ebebeb;
+
+}
+#bottomnewsphoto{
+	float: left;
+	border-left: 1px solid #ebebeb;
+}
+
+#opinions{
+	float: right;
+	width: 19vw;
+	height: 15vw;
+	border-left: 1px solid #ebebeb;
+}
+
+.opiniontext{
+	padding-left: 1vw;
+}
+
+.opiniondiv{
+	width: 15vw;
+	height: 5vw;
+	padding-left: 0.2vw;
+	display: inline-block;
+}
+
+#photoopinion{
+	float: right;
+	margin-top: -2.5vw;
+	margin-right: 0;
+}
+
+.opiniontitle{
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#opiniontext{
+	margin-top: -0.8vw;
+	color: #555;
+	font-size: 0.8em;
+}
+
+#photoopinion2{
+	float: right;
+	margin-top: -3vw;
+	margin-right: 5vw;
+
+}
+
+#opinionone{
+	float: right;
+	font-size:
+	padding-left: 1vw;
+	width: 18vw;
+	height: 5vw;
+	border-bottom: 1px solid #ebebeb;
+}
+
+#opiniontwo{
+	float: right;
+	width: 18vw;
+	height: 5vw;
+	border-bottom: 1px solid #ebebeb;
+}

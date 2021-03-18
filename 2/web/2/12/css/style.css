@@ -1,0 +1,30 @@
+.transparentsquare{
+	background: radial-gradient(farthest-side, black, white);
+}
+
+#top{
+	width: 55vw;
+	height: 5vw;
+}
+
+#left{
+	float:left;
+	width: 5vw;
+	height: 40vw;
+}
+
+
+#right{
+	margin-right: 44vw;
+	float:right;
+	width: 5vw;
+	height: 40vw;
+}
+
+#bottom{
+	position: fixed;
+	bottom: 0;
+	width: 55vw;
+	height: 5vw;
+}
+

@@ -1,0 +1,159 @@
+use MusicApplication
+select * from musicapplication_schema.Artist
+
+create or alter procedure modify_type_do
+as
+    alter table musicapplication_schema.Artist
+    alter column age smallint
+    print 'Column changed to smallint'
+go
+create or alter procedure modify_type_undo
+as
+    alter table musicapplication_schema.Artist
+    alter column age int
+    print 'Column changed to int'
+
+go
+create or alter procedure add_nationality_do
+as
+    alter table musicapplication_schema.Artist
+    add nationality varchar(50)
+    print 'Nationality column added'
+
+go
+create or alter procedure add_nationality_undo
+as
+    alter table musicapplication_schema.Artist
+    drop column nationality
+    print 'Nationality column removed'
+
+go
+create or alter procedure add_default_ticket_price_do
+as
+    alter table musicapplication_schema.Ticket
+    add constraint default_price default(100) for price
+    print 'Default ticket price added'
+go
+create or alter procedure add_default_ticket_price_undo
+as
+    alter table musicapplication_schema.Ticket
+    drop constraint default_price
+    print 'Default ticket price removed'
+go
+
+create or alter procedure remove_pk_ticket_do
+as
+    alter table musicapplication_schema.Ticket
+    drop constraint PK__Ticket__DC105B0FCFCAD57A
+    print 'Ticket primary key removed'
+go
+
+create or alter procedure remove_pk_ticket_undo
+as
+    alter table musicapplication_schema.Ticket
+    add constraint PK__Ticket__DC105B0FCFCAD57A primary key (tid)
+    print 'Ticket primary key added'
+go
+
+create or alter procedure add_event_candidate_key_do
+as
+    alter table musicapplication_schema.Event
+    add constraint name_candidate unique(name)
+    print 'Event candidate key added'
+go
+
+create or alter procedure add_event_candidate_key_undo
+as
+    alter table musicapplication_schema.Event
+    drop constraint name_candidate
+    print 'Event candidate key removed'
+go
+
+create or alter procedure remove_fk_ticket_do
+as
+    alter table musicapplication_schema.Ticket
+    drop constraint FK__Ticket__eid__4D5F7D71
+    print 'Ticket foreign key removed'
+go
+
+create or alter  procedure remove_fk_ticket_undo
+as
+    alter table musicapplication_schema.Ticket
+    add constraint FK__Ticket__eid__4D5F7D71 foreign key(eid) references musicapplication_schema.Event(eid)
+    print 'Ticket foreign key added'
+go
+
+create or alter procedure create_table_do
+as
+    create table musicapplication_schema.Application(
+        apid int primary key,
+        name varchar(50),
+        version varchar(50),
+        size int
+    )
+    print 'Application table created'
+go
+
+create or alter procedure create_table_undo
+as
+    drop table musicapplication_schema.Application
+    print 'Application table removed'
+go
+
+create table versionTable (
+    version int
+)
+insert into versionTable values (1)
+
+create or alter procedure select_version @new_version int
+as
+    if @new_version < 1 or @new_version > 8
+        print 'Invalid version'
+    else begin
+        declare @current_version int
+        select @current_version = version from versionTable
+        while @current_version < @new_version
+        begin
+            if @current_version = 1
+                exec modify_type_do
+            if @current_version = 2
+                exec add_nationality_do
+            if @current_version = 3
+                exec add_default_ticket_price_do
+            if @current_version = 4
+                exec remove_pk_ticket_do
+            if @current_version = 5
+                exec add_event_candidate_key_do
+            if @current_version = 6
+                exec remove_fk_ticket_do
+            if @current_version = 7
+                exec create_table_do
+            set @current_version = @current_version + 1
+        end
+        while @current_version > @new_version
+        begin
+            if @current_version = 2
+                exec modify_type_undo
+            if @current_version = 3
+                exec add_nationality_undo
+            if @current_version = 4
+                exec add_default_ticket_price_undo
+            if @current_version = 5
+                exec remove_pk_ticket_undo
+            if @current_version = 6
+                exec add_event_candidate_key_undo
+            if @current_version = 7
+                exec remove_fk_ticket_undo
+            if @current_version = 8
+                exec create_table_undo
+            set @current_version = @current_version - 1
+        end
+        update versionTable
+        set version=@new_version
+        where 1=1
+    end
+go
+
+exec select_version 1
+select * from versionTable
+

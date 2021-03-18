@@ -1,0 +1,13 @@
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (0, 100, N'general', 0);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (1, 27, N'one day', 0);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (2, 400, N'vip', 0);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (3, 999, N'all', 0);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (4, 100, N'general', 1);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (5, 27, N'one day', 1);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (6, 400, N'vip', 1);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (7, 100, N'general', 2);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (8, 27, N'one day', 3);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (9, 400, N'vip', 3);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (10, 999, N'all', 3);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (11, 999999999, N'blackedition', null);
+INSERT INTO MusicApplication.musicapplication_schema.Ticket (tid, price, type, eid) VALUES (123312, 100, N'asd', 1);

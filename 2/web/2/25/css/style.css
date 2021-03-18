@@ -1,0 +1,19 @@
+#circle{
+	height: 100px;
+	width: 100px;
+	background: black;
+	border-radius: 50px;
+}
+
+#circle:hover {
+    animation-name: jump;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+   	animation-duration: 10s;
+}
+
+@keyframes jump {
+  0%   { transform: translateY(0); }
+  50% { transform: translateY(800%); }
+  100% { transform: translateY(0%); }
+}

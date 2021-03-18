@@ -1,0 +1,130 @@
+create table Application
+(
+	apid int not null
+		primary key,
+	name varchar(50),
+	version varchar(50),
+	size int
+)
+go
+
+create table Event
+(
+	eid int not null
+		primary key,
+	tdate date,
+	location varchar(50),
+	name varchar(50)
+		constraint name_candidate
+			unique
+)
+go
+
+create table Format
+(
+	fid int not null
+		primary key,
+	type varchar(50)
+)
+go
+
+create table Genre
+(
+	gid int not null
+		primary key,
+	name varchar(50)
+)
+go
+
+create table Album
+(
+	id int not null
+		primary key,
+	name varchar(50),
+	number_of_songs int,
+	gid int
+		references Genre,
+	fid int
+		references Format
+)
+go
+
+create table Playlist
+(
+	pid int not null
+		primary key,
+	name varchar(50),
+	number_songs int
+)
+go
+
+create table RecordLabel
+(
+	rid int not null
+		primary key,
+	name varchar(50)
+)
+go
+
+create table Artist
+(
+	aid int not null
+		primary key,
+	name varchar(50),
+	rid int
+		references RecordLabel,
+	age smallint,
+	nationality varchar(50)
+)
+go
+
+create table Artist_Album
+(
+	aid int not null
+		references Artist,
+	id int not null
+		references Album,
+	primary key (aid, id)
+)
+go
+
+create table Event_Artist
+(
+	aid int
+		references Artist,
+	eid int
+		references Event
+)
+go
+
+create table Song
+(
+	sid int not null
+		primary key,
+	aid int
+		references Artist,
+	name varchar(50),
+	length int
+)
+go
+
+create table Playlist_Song
+(
+	pid int not null
+		references Playlist,
+	sid int not null
+		references Song,
+	primary key (pid, sid)
+)
+go
+
+create table Ticket
+(
+	tid int not null,
+	price int constraint default_price default 100,
+	type varchar(50),
+	eid int
+)
+go
+
+

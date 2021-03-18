@@ -1,0 +1,10 @@
+exit 
+enable
+config terminal
+
+ip dhcp pool cacat
+network "ip" "mask"
+default-router "ip-router"
+dns-server "ip-dns"
+
+write memory
